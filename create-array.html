@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" style="width: 200px;" id="input">
+    <button id="add" onclick="add()">Add</button>
+    <button id="display" onclick="display()">Display</button><br>
+    <span id="result"></span>
+    <script>
+        let input = document.getElementById('input');
+        let result = document.getElementById('result');
+        let testarr = [];
+        function add(){
+            
+            // let value = input.value;
+            testarr.push(input.value);
+            input.value = "";
+        }
+        function display(){
+            for(let i = 0; i < testarr.length; i++){
+                result.innerHTML += "Element " + i + " = " + testarr[i] + "<br>";
+            }
+        }
+    </script>
+</body>
+</html>
