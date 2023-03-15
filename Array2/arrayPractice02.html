@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="bt1" onclick="BT1()">Bai 1</button><br>
+    <button id="bt2" onclick="BT2()">Bai 2</button><br>
+    <button id="bt3" onclick="BT3()">Bai 3</button><br>
+    <button id="bt4" onclick="BT4()">Bai 4</button><br>
+    <button id="bt5" onclick="BT5()">Bai 5</button><br>
+    <button id="bt6" onclick="BT6()">Bai 6</button><br>
+    <script>
+        // Bai 1
+        function BT1(){
+            let a = [
+                [1, 2, 1, 24],
+                [8, 11, 9, 4],
+                [7, 0, 7, 27],
+                [7, 4, 28, 14],
+                [3, 10, 26, 7]
+            ];
+            for(let i=0; i<a.length; i++){
+                console.log('row' + i);
+                for(let j=0; j<a[i].length; j++){
+                    console.log(a[i][j]);
+                }
+            }
+        }
+
+        //Bai 2
+        function BT2(){
+            let arr = prompt("Nhap vao chuoi ky tu").split('');
+            let resArr =[];
+            for(let i=arr.length-1; i>=0; i--){
+                resArr.push(arr[i]);
+            }
+            console.log(resArr.join(''));
+        }
+
+        //Bai 3
+        function BT3(){
+            let arr = prompt("Nhap vao chuoi ky tu").split('');
+            console.log(arr);
+            console.log('So ky tu trong mang:');
+            console.log(arr.length);
+        }
+
+        //Bai 4
+        function BT4(){
+            let arr = prompt("Nhap vao chuoi ky tu").split('');
+            console.log(arr);
+            console.log('So ky tu trong chuoi:');
+            console.log(arr.length);
+        }
+
+        //Bai 5
+        function BT5(){
+            let arr1 = prompt("Nhap vao chuoi ky tu").split('');
+            let arr2 = prompt("Nhap vao chuoi ky tu").split('');
+            for(var i=0; i<arr1.length || i<arr2.length; i++){
+                if(arr1[i] != arr2[i]){
+                    console.log('Hai chuoi vua nhap la khac nhau');
+                    break;
+                }
+            }
+            if(i >= arr1.length){
+                console.log('Hai chuoi vua nhap la giong nhau');
+            }
+        }
+
+        //Bai 6
+        function BT6(){
+            let arr = prompt("Nhap vao chuoi ky tu").split('');
+            console.log(arr.join(''));
+            for(let i=0; i<=arr.length; i++){
+                if(arr[i] == '-'){
+                    arr.splice(i,1,'_');
+                }
+            }
+            console.log(arr.join(''));
+        }
+    </script>
+</body>
+</html>
