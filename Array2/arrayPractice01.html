@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="BT1" onclick="BT1()">Bai 1</button><br>
+    <button id="BT2" onclick="BT2()">Bai 2</button><br>
+    <button id="BT3" onclick="BT3()">Bai 3</button><br>
+    <button id="BT4" onclick="BT4()">Bai 4</button><br>
+    <button id="BT5" onclick="BT5()">Bai 5</button><br>
+    <button id="BT6" onclick="BT6()">Bai 6</button><br>
+    <button id="BT7" onclick="BT7()">Bai 7</button><br>
+    <button id="BT8" onclick="BT8()">Bai 8</button><br>
+    <button id="BT9" onclick="BT9()">Bai 9</button><br>
+    <script>
+        //Bai1
+        function BT1(){
+            let arr = [];
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 30);
+            }
+            console.log(arr);
+            console.log('Cac phan tu lon hon 10:');
+            for(let i=0; i<arr.length; i++){
+                if(arr[i] > 10){                  
+                    console.log(arr[i]);              
+                }
+            }
+        }
+
+        //Bai2
+        function BT2(){
+            let arr = [];
+            let max = 0, index;
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 100);
+                if(arr[i] > max){
+                    max = arr[i];
+                    index = i;
+                }
+            }
+            console.log(arr);
+            console.log('Phan tu lon nhat');
+            console.log(max);
+            console.log('Vi tri thu:');
+            console.log(index + 1);
+        }
+
+        //Bai3
+        function BT3(){
+            let arr = [];
+            let max = 0, index, total = 0;
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 100);
+                total += arr[i];
+                if(arr[i] > max){
+                    max = arr[i];
+                    index = i;
+                }
+            }
+            console.log(arr);
+            console.log('Phan tu lon nhat');
+            console.log(max);
+            console.log('Vi tri thu:');
+            console.log(index + 1);
+            console.log('Gia tri trung binh cua cac phan tu:');
+            console.log(total/arr.length);
+        }
+
+        //Bai4
+        function BT4(){
+            let arr = [];
+            let mid;
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 100);
+            }
+            console.log(arr);
+            console.log('Reverse');
+            // arr.reverse(); //cach 1
+            for(let i=0; i<arr.length/2; i++){
+                mid = arr[i];
+                arr[i] = arr[arr.length -1 -i];
+                arr[arr.length-i-1] = mid;
+            }
+            console.log(arr);
+        }
+
+        //Bai5
+        function BT5(){
+            let arr = [];
+            let count = 0;
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt((Math.random() * 200) - 100);
+                if(arr[i] < 0){
+                    count += 1;
+                }
+            }
+            console.log(arr);
+            console.log('So luong so nguyen am trong mang:');
+            console.log(count);
+        }
+
+        //Bai6
+        function BT6(){
+            let arr = [];
+            let numV = prompt('Nhap so nguyen V');
+            let checkV;
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 100);
+                if(numV == arr[i]){
+                    checkV = true;
+                }
+            }
+            console.log(arr);
+            if(checkV){
+                alert("V is in the array");
+            }else{
+                alert("V is not in the array");
+            }
+        }
+
+        //Bai7
+        function BT7(){
+            let arr = [];
+            let checkV, indexV;
+            let numV = prompt('Nhap so nguyen V');
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 20);
+                if(numV == arr[i]){
+                    checkV = true;
+                    indexV = i;
+                }
+            }
+            console.log(arr);
+            if(checkV){
+                arr.splice(indexV,1);
+                arr.push(0);
+            }
+            console.log(arr);
+        }
+
+        //Bai8
+        function BT8(){
+            let arr = [];
+            for(let i=0; i<10; i++){
+                arr[i] = parseInt(Math.random() * 100);
+            }
+            console.log(arr);
+            arr.sort(function(a,b){
+                return b-a;
+            })
+            console.log('Sort:');
+            console.log(arr);
+        }
+
+        //Bai9
+        function BT9(){
+            let arrA = [];
+            let arrB = [];
+            for(let i=0; i<10; i++){
+                arrA[i] = parseInt(Math.random() * 100);
+                arrB[i] = parseInt(Math.random() * 100);
+            }
+            console.log(arrA);
+            console.log(arrB);
+            let arrC = arrA.concat(arrB);
+            console.log(arrC);
+        }
+    </script>
+</body>
+</html>
